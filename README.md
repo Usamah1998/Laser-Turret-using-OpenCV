@@ -1,5 +1,9 @@
 # Laser-Turret-using-OpenCV
 A laser pointer turret that aims at and follows target objects within its view.The turret consists of a laser attached to two servo motors controlling horizontal and vertical aim. Uses a arduino to control the laser and a hand detection algorithm using OpenCV and cvzone. The center of the bounding box of the largest contour detected by OpenCV is used as the target for the laser to track.The algorithm can be configured to detect different objects using cvzone like face, shapes, colors and many other objects using cvzone library with OpenCV. It also calculate the distance of the object using which accurate angles is calculated for the X-Y servos.
+![Tracking A Hand](https://github.com/Usamah1998/Laser-Turret-using-OpenCV/blob/main/README%20Images/setup3.jpeg)
+
+
+![Tracking A Hand](https://github.com/Usamah1998/Laser-Turret-using-OpenCV/blob/main/README%20Images/working-1.png)
 ## Implementation
 ### Calculating Focal Length
 First the focal length of the camera must be calculated using a set of images. First we execute the script `Capture_ref_image.py` and a window pops up with camera feed. Then, we put our hand(or the target object) at a distance of exact `84cm` from the camera and take a series of pictures by pressing `c`. Which will be stored in a file `capture_images`. This known distance(84cm) can be changed in `Utils.py` by chanhing the value of variable `Known_distance`. The average known width of the hand from bottom of Index finger to Pinky finger is `6.3cm`. This Known width(6.3cm) can be changed in `Utils.py` by chanhing the value of variable `Known_width`. Using the formula:
